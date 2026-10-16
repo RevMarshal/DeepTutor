@@ -108,10 +108,12 @@ docker-compose*.yml
 .dockerignore
 
 # ============================================
-# User Data (will be mounted as volumes)
+# User Data & Private Runtime (mounted as volumes)
 # ============================================
-data/user/
-data/knowledge_bases/
+data/
+**/data/
+private/
+**/private/
 run_code_workspace/
 
 # ============================================
@@ -149,3 +151,13 @@ temp/
 # ============================================
 LICENSE
 Communication.md
+
+# ============================================
+# Secrets and Credentials
+# ============================================
+.secrets.baseline
+*.pem
+*.key
+*.token
+*.secret
+

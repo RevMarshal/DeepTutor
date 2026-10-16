@@ -7,6 +7,7 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { brandText } from "@/lib/brand";
 import type {
   AttachmentProcessingItem,
   AttachmentProcessingPhase,
@@ -18,9 +19,9 @@ function phaseLabel(
 ): string {
   switch (phase) {
     case "uploading":
-      return t("Sending to DeepTutor");
+      return brandText(t("Sending to DeepTutor"));
     case "received":
-      return t("Uploaded to DeepTutor");
+      return brandText(t("Uploaded to DeepTutor"));
     case "submitting":
       return t("Sending to document parser");
     case "parsing":

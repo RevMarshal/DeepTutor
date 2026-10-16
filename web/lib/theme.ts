@@ -68,15 +68,11 @@ export function saveThemeToStorage(theme: Theme): boolean {
 
 /**
  * Get system preference for theme.
- * Light systems get "snow" (the pure-white Default theme); dark systems
- * get "dark". Must stay in sync with the inline ThemeScript fallback.
+ * Defaults to RevMarshal CI dark on first visit.
+ * Must stay in sync with the inline ThemeScript fallback.
  */
 export function getSystemTheme(): Theme {
-  if (typeof window === "undefined") return "snow";
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "snow";
+  return "dark";
 }
 
 /**

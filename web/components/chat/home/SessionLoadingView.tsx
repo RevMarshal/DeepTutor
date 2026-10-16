@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Loader2, RotateCw, TriangleAlert, X } from "lucide-react";
+import RmBrandMark from "@/components/common/RmBrandMark";
 
 /**
  * Indeterminate loading overlay shown while a chat session is fetched from
@@ -58,14 +59,7 @@ export default function SessionLoadingView({
 
       {/* Logo + spinner (or the failure mark) */}
       <div className="flex items-center gap-3">
-        <img
-          src="/logo_black.png"
-          alt="DeepTutor"
-          width={32}
-          height={32}
-          className="h-8 w-8 select-none"
-          draggable={false}
-        />
+        <RmBrandMark size={32} alt="RevMarshal Learn" />
         {failed ? (
           <TriangleAlert className="h-5 w-5 text-[var(--destructive)]" />
         ) : (

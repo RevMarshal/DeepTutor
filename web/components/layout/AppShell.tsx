@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import RmBrandMark from "@/components/common/RmBrandMark";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -110,21 +111,11 @@ export default function AppShell({ sidebar, children }: AppShellProps) {
             >
               <Menu size={18} strokeWidth={1.7} />
             </button>
-            <Link href="/" className="flex items-center gap-1.5">
-              <Image
-                src="/logo.png"
-                alt="DeepTutor"
-                width={20}
-                height={20}
-                className="h-5 w-5"
-              />
-              <Image
-                src="/banner.png"
-                alt="DeepTutor"
-                width={897}
-                height={236}
-                className="h-[18px] w-auto"
-              />
+            <Link href="/" aria-label="RevMarshal Learn" className="flex items-center gap-2">
+              <RmBrandMark size={20} />
+              <span className="font-serif text-[14px] font-semibold tracking-tight text-[var(--foreground)]">
+                RevMarshal <span className="font-sans text-[11px] font-medium text-[var(--muted-foreground)]">Learn</span>
+              </span>
             </Link>
           </div>
 

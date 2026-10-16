@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { brandText } from "@/lib/brand";
 import MarkdownRenderer from "@/components/common/MarkdownRenderer";
 import { formatTurnDuration, getTurnDurationSeconds } from "@/lib/trace-timing";
 import { describeProviderTool, type ToolProvider } from "@/lib/trace-tools";
@@ -1580,7 +1581,7 @@ export function StreamingStatus({
     Boolean(isStreaming),
   );
 
-  const name = agentName?.trim() || "DeepTutor";
+  const name = agentName?.trim() || "RevMarshal Learn";
   let modeLabel = t("{{name}} Reasoning…", { name });
   if (mode === "tool_using") modeLabel = t("Tool Calling…");
   else if (mode === "planning") modeLabel = t("{{name}} Planning…", { name });
@@ -1594,7 +1595,7 @@ export function StreamingStatus({
   else if (mode === "quizzing") modeLabel = t("{{name}} Quizzing…", { name });
   else if (mode === "reflecting")
     modeLabel = t("{{name}} Reflecting…", { name });
-  else if (mode === "responded") modeLabel = t("DeepTutor responded.");
+  else if (mode === "responded") modeLabel = brandText(t("DeepTutor responded."));
 
   const label =
     getExploreContextStatusLabel(events, t, Boolean(isStreaming)) ??

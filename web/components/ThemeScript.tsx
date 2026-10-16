@@ -24,15 +24,8 @@ export default function ThemeScript() {
         } else if (stored === 'light') {
           // already clean
         } else {
-          // No stored preference: Default (snow) for light systems,
-          // Dark for prefers-color-scheme: dark.
-          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('deeptutor-theme', 'dark');
-          } else {
-            document.documentElement.classList.add('theme-snow');
-            localStorage.setItem('deeptutor-theme', 'snow');
-          }
+          // No stored preference: genuine CI dark default
+          document.documentElement.classList.add('dark');
         }
       } catch (e) {
         /* localStorage may be disabled */

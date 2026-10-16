@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import RmBrandMark from "@/components/common/RmBrandMark";
+import { brandText } from "@/lib/brand";
 import { useTranslation } from "react-i18next";
 import { register, checkIsFirstUser, fetchAuthStatus } from "@/lib/auth";
 
@@ -54,9 +56,12 @@ export default function RegisterPage() {
   return (
     <div className="w-full max-w-sm">
       {/* Logo / Title */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-8 flex flex-col items-center">
+        <div className="mb-3">
+          <RmBrandMark size={36} />
+        </div>
         <h1 className="font-serif text-2xl font-semibold text-[var(--foreground)] tracking-tight">
-          DeepTutor
+          RevMarshal Learn
         </h1>
         <p className="mt-1 text-sm text-[var(--muted-foreground)]">
           {t("Create your account")}
@@ -162,7 +167,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2.5 px-4 rounded-lg font-medium text-sm
+            className="w-full min-h-[44px] py-2.5 px-4 rounded-lg font-medium text-sm
                        bg-[var(--primary)] text-[var(--primary-foreground)]
                        hover:opacity-90 active:opacity-80
                        disabled:opacity-50 disabled:cursor-not-allowed
@@ -184,7 +189,7 @@ export default function RegisterPage() {
       </p>
 
       <p className="mt-3 text-center text-xs text-[var(--muted-foreground)]">
-        {t("DeepTutor · Agent-Native Learning")}
+        {brandText(t("DeepTutor · Agent-Native Learning"))}
       </p>
     </div>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { APP_LANGUAGES, isAppLanguage, type AppLanguage } from "@/i18n/init";
+import { brandText } from "@/lib/brand";
 import AgentSetupHelp from "@/components/settings/AgentSetupHelp";
 import {
   SettingRow,
@@ -53,8 +54,10 @@ export default function SettingsOverview() {
     <div>
       <SettingsPageHeader
         title={t("General")}
-        description={t(
-          "Make DeepTutor feel at home. Apply your preferences using the bar below.",
+        description={brandText(
+          t(
+            "Make DeepTutor feel at home. Apply your preferences using the bar below.",
+          ),
         )}
       />
       <SettingSection title={t("Language")}>

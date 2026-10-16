@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Lora } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import ThemeScript from "@/components/ThemeScript";
 import ToastViewport from "@/components/common/ToastViewport";
@@ -9,29 +9,29 @@ import { WorkspaceNavigation } from "@/components/workspaces/WorkspaceNavigation
 import { AppShellProvider } from "@/context/AppShellContext";
 import { I18nClientBridge } from "@/i18n/I18nClientBridge";
 
-// Geist matches the public site (deeptutor.info) and stays crisp at the
-// small UI sizes the composer/toolbars use, unlike the rounder Jakarta.
-const fontSans = Geist({
+// RevMarshal Design System: Inter for body/UI, Sora for headings
+const fontSans = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
 });
 
-const fontSerif = Lora({
+const fontSerif = Sora({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
-  title: "DeepTutor",
+  title: "RevMarshal Learn",
   description: "Agent-native intelligent learning companion",
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/rm-icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/rm-icon-16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/rm-apple-touch-icon.png",
   },
 };
 
